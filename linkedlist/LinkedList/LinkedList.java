@@ -64,9 +64,17 @@ public void append(int value) {
     length++;
 }
 
+public void makeEmpty(){
+    head=null;
+    tail=null;
+    length=0;
+}
 public static void main(String[] args) {
     LinkedList mylist = new LinkedList(3);
+    mylist.makeEmpty();
+    //Testing the methods to add
     mylist.append(5);
+    mylist.append(8);
     System.out.println(mylist);
         mylist.getHead();
         mylist.getTail();
