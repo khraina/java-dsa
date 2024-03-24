@@ -48,10 +48,27 @@ public void getTail() {
 public void getLength() {
     System.out.println("Length: " + length);
 }
+
+public void append(int value) {
+    Node newnode=new Node(value);
+    if(head==null){
+        head=newnode;
+        tail=newnode;
+        
+    }
+    else
+    {
+        tail.next=newnode;
+        tail=newnode;
+    }
+    length++;
+}
+
 public static void main(String[] args) {
     LinkedList mylist = new LinkedList(3);
+    mylist.append(5);
     System.out.println(mylist);
-    mylist.getHead();
+        mylist.getHead();
         mylist.getTail();
         mylist.getLength();
 
