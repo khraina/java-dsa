@@ -53,7 +53,7 @@ public void append(int value) {
     Node newnode=new Node(value);
     if(head==null){
         head=newnode;
-        tail=newnode;
+        tail=newnode ;
         
     }
     else
@@ -69,6 +69,30 @@ public void makeEmpty(){
     tail=null;
     length=0;
 }
+
+
+public void removeLast(){
+    if(head==null) return null;
+    
+    Node temp=head;
+    Node pre=head;
+    while(temp.next!=null){
+        pre=temp;
+        temp=temp.next;
+    }
+    tail=pre;
+    tail.next=null;
+    length--;
+    if(length==0){
+        head=null;
+        tail=null;
+    }
+
+    return temp;
+
+
+}
+
 public static void main(String[] args) {
     LinkedList mylist = new LinkedList(3);
     mylist.makeEmpty();
@@ -82,6 +106,12 @@ public static void main(String[] args) {
 
         System.out.println("\nLinked List:");
         mylist.printList();
+
+        System.out.println(mylist.removeLast().value);
+        // (1) Item - Returns 1 Node
+        System.out.println(mylist.removeLast().value);
+        // (0) Items - Returns null
+        System.out.println(mylist.removeLast());
 }
 
 }
